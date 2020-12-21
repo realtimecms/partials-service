@@ -39,6 +39,7 @@ const Partial = definition.model({
   },
   crud: {
     deleteTrigger: true,
+    updateMethod: 'create',
     options: {
       access: (params, {client, service}) => {
         return client.roles && client.roles.includes('admin')
