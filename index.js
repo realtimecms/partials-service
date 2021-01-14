@@ -42,7 +42,7 @@ const Partial = definition.model({
     updateMethod: 'create',
     options: {
       access: (params, {client, service}) => {
-        return client.roles && client.roles.includes('admin')
+        return client.roles && ( client.roles.includes('admin') || client.roles.includes('partials') )
       }
     },
     readOptions: {
